@@ -1,5 +1,5 @@
 # Track Playback Controller
-A small script for a uniform playback of tracks from Youtube, Soundcloud and Spotify in the browser 
+A small script for a uniform playback of tracks from Youtube, Soundcloud and Spotify in the browser. 
 
 I couldn't find a proper library to play tracks from different music streaming services in the browser so I wrote this small one. 
 It is used by [cassettify.org](https://www.cassettify.org) and was primarily made to play the playlists containing music tracks from different music streaming services. 
@@ -30,7 +30,7 @@ Also add three containers where `embed-controller.js` will insert the iframe emb
 <div id="spotify"></div>
 ```
 
-For Youtube tracks:
+To play Youtube tracks:
 ```js
 const youtube = new YoutubeController();
 await youtube.init();
@@ -39,7 +39,7 @@ await youtube.load('zNTaVTMoNTk');
 youtube.play();
 setTimeout(() => youtube.pause(), 5000);
 ```
-For Soundcloud tracks:
+To play Soundcloud tracks:
 ```js
 const soundcloud = new SoundcloudController();
 await soundcloud.init();
@@ -49,7 +49,7 @@ soundcloud.play();
 setTimeout(() => soundcloud.pause(), 5000);
 ```
 
-For Spotify tracks:
+To play Spotify tracks:
 ```js
 const spotify = new SpotifyController();
 await spotify.init('access_token_from_user_here');
@@ -59,10 +59,12 @@ spotify.play();
 setTimeout(() => spotify.pause(), 5000);
 ```
 
-See `examples/main.js` and `examples/index.html` for a more detailed example. 
+See the `examples` folder for a more detailed example. 
 
 
 ## Notice for Spotify
-Spotify only works when an access_token from an authenticated Spotify Premium account is supplied (access_token given for scope of playing tracks) and a Spotify application is registered. 
+Spotify only works when an `access_token` from an authenticated Spotify Premium account is supplied (access_token given for scope of playing tracks) and a Spotify application is registered. 
 This must be done seperately like with https://github.com/jwilsson/spotify-web-api-php for example. 
+
+Also see [here](https://developer.spotify.com/documentation/web-playback-sdk/quick-start) and [here](https://developer.spotify.com/documentation/web-playback-sdk/reference/#playing-a-spotify-uri) for further information on Spotify. 
 

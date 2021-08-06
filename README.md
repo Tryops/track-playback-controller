@@ -59,7 +59,7 @@ spotify.play();
 setTimeout(() => spotify.pause(), 5000);
 ```
 
-See the `examples` folder for a more detailed example. 
+See the `example` folder for a more detailed example. 
 
 
 ## Notice for Spotify

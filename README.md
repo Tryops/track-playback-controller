@@ -1,14 +1,19 @@
 # Track Playback Controller
-A small script for a uniform playback of tracks from different music streaming services in the browser.
+A small wrapper script to play tracks from different music streaming services uniformly in the browser.<br>
 It can play tracks from Youtube, Soundcloud and Spotify. Just supply an ID for a track and let it play! 
+
 
 ## Why
 I couldn't find a library for exactly these three music streaming services so I made this small wrapper so they can be used in the same way. 
-It is used by [cassettify.org](https://www.cassettify.org) which was a website for collecting music from different music streaming platforms in uniform playlists that you could then share and listen to. 
+It uses the [Youtube Iframe API](https://developers.google.com/youtube/iframe_api_reference
+), [Soundcloud Widget API](https://developers.soundcloud.com/docs/api/html5-widget) and [Spotify Web Playback SDK](https://developer.spotify.com/documentation/web-playback-sdk/quick-start/), all of which embed iframes to play tracks from their services. 
+
+It was used for [cassettify.org](https://www.cassettify.org) which was a website for collecting music from different music streaming platforms in uniform playlists that you could then listen to and share with others. 
 
 
 ## Usage
 
+### Setup
 First include the API scripts for the streaming services on your page:
 ```html
 <script src="https://www.youtube.com/iframe_api"></script>
@@ -30,6 +35,11 @@ Also add three containers where `embed-controller.js` will insert the iframe emb
 <div id="spotify"></div>
 ```
 
+_(The `<div id="spotify"></div>` container is not actually needed and could be left out as the Spotify SDK inserts its own hidden iframe at the bottom of the page)_
+
+If you want to hide the iframes, add a `hidden` attribute or set their CSS to `display: none;`.
+
+### Playing tracks
 To play Youtube tracks:
 ```js
 const youtube = new YoutubeController();

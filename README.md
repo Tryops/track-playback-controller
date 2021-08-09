@@ -1,10 +1,10 @@
 # Track Playback Controller
-A small script for a uniform playback of tracks from Youtube, Soundcloud and Spotify in the browser. 
+A small script for a uniform playback of tracks from different music streaming services in the browser.
+It can play tracks from Youtube, Soundcloud and Spotify. Just supply an ID for a track and let it play! 
 
-I couldn't find a proper library to play tracks from different music streaming services in the browser so I wrote this small one. 
-It is used by [cassettify.org](https://www.cassettify.org) and was primarily made to play the playlists containing music tracks from different music streaming services. 
-
-It can play tracks from Youtube, Soundcloud and Spotify. Just supply a serivice ID for a track and let it play! 
+## Why
+I couldn't find a library for exactly these three music streaming services so I made this small wrapper so they can be used in the same way. 
+It is used by [cassettify.org](https://www.cassettify.org) which was a website for collecting music from different music streaming platforms in uniform playlists that you could then share and listen to. 
 
 
 ## Usage
@@ -63,8 +63,8 @@ See the `example` folder for a more detailed example.
 
 
 ## Notice for Spotify
-Spotify only works when an `access_token` from an authenticated Spotify Premium account is supplied (access_token given for scope of playing tracks) and a Spotify application is registered. 
+Spotify only works when an `access_token` from an authenticated Spotify Premium account is supplied (`access_token` given for scope of playing tracks, e.g. `streaming`, `user-read-email` and `user-read-private`) and a Spotify application is registered. 
 This must be done seperately like with https://github.com/jwilsson/spotify-web-api-php for example. 
 
-Also see [here](https://developer.spotify.com/documentation/web-playback-sdk/quick-start) and [here](https://developer.spotify.com/documentation/web-playback-sdk/reference/#playing-a-spotify-uri) for further information on Spotify. 
+Also see [the quickstart guide](https://developer.spotify.com/documentation/web-playback-sdk/quick-start) and [the SDK reference](https://developer.spotify.com/documentation/web-playback-sdk/reference/#playing-a-spotify-uri) for further information on Spotify. 
 
